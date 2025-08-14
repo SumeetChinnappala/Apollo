@@ -4,7 +4,7 @@ import gzip
 
 # === 1. CONFIGURATION ===
 # Change this to the full path of your downloaded file
-GWAS_FILE = r"C:\Users\Owner\Documents\startup\GCST90239001_buildGRCh38.gz"
+GWAS_FILE = r"C:\Users\Owner\Documents\bio_project\GCST90239001_buildGRCh38.tsv.gz"
 
 
 # === 2. LOAD DATA ===
@@ -57,3 +57,4 @@ st.download_button(
 # === 6. HOW TO RUN ===
 st.write("**To run this app:** In Anaconda Prompt, navigate to this script's folder and run:")
 st.code("streamlit run this_script.py")
+
