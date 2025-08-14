@@ -235,7 +235,18 @@ features = pd.DataFrame({
     "wdegree": [wdeg[g] for g in G.nodes()],
     "betweenness": [btw[g] for g in G.nodes()],
     "closeness": [close[g] for g in G.nodes()],
-}).merge(gene_strength.rename(columns={"studies":"study_hits"}), on="gene", how="left")
+})
+
+# Ensure both 'gene' columns are strings before merging
+features['gene'] = features['gene'].astype(str)
+gene_strength['gene'] = gene_strength['gene'].astype(str)
+
+# Now merge
+features = features.merge(
+    gene_strength.rename(columns={"studies": "study_hits"}),
+    on="gene",
+    how="left"
+)
 
 # Define a simple target score for ranking (trans-dominance proxy)
 features["trans_dominance_score"] = features["total_signal"] * np.maximum(features["degree"], 1)
