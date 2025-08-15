@@ -1,0 +1,27 @@
+﻿project:
+  name: "Apollo"
+  version: "0.2.0"
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  embedding_model: "text-embedding-3-small"
+
+ml:
+  grn_model:
+    type: "knn_cosine"   # simple baseline before GNNs
+    top_k: 3
+    min_cosine: 0.25
+    embed_dim: 64
+
+validation:
+  ground_truth_sources: ["toy_ground_truth_csv"]
+
+ui:
+  color_scheme:
+    known_match: "blue"
+    novel_high_conf: "red"
+    ml_conf_bio_uncertain: "yellow"
+
+business:
+  roi_sources: ["DrugBank","ClinicalTrials.gov"]

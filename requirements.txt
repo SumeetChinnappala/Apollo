@@ -1,0 +1,15 @@
+﻿numpy
+pandas
+scikit-learn
+networkx
+matplotlib
+seaborn
+plotly
+pyyaml
+fastapi
+uvicorn
+# torch is optional right now; keeps CPU wheel only. Comment out if it causes issues:
+torch
+# UI note: use Dash + dash-cytoscape later for graph viz (not needed to run MVP CLI)
+# dash
+# dash-cytoscape
